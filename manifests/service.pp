@@ -9,13 +9,17 @@ class cgroups::service (
   $enable   = $cgroups::service_enable,
   $ensure   = $cgroups::service_ensure,
 ) {
-  include cgroups::params
 
-  $service = $cgroups::params::service_name
-
-  service { $service:
-    hasstatus   => true,
-    hasrestart  => false,
+  # Ubuntu precise has an upstart job for reconfiguring cgroups, trusty doesn't.
+  case $::lsbdistcodename {
+    'precise': {
+      service { 'cgconfig':
+        hasstatus   => true,
+        hasrestart  => false,
+      }
+    }
+    'trusty': {}
+    default: {}
   }
 
 }

@@ -10,8 +10,4 @@ class cgroups::params {
   $config_file  = '/etc/cgconfig.conf'
   $rules_file   = '/etc/cgrules.conf'
 
-  $service_name = $::osfamily ? {
-    'Debian' => 'cgconfig',
-    default  => fail('Unsupported Platform')
-  }
 }

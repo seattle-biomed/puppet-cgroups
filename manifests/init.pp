@@ -1,6 +1,7 @@
 # == Class: cgroups
 #
 # Full description of class cgroups is in the README.
+# https://help.ubuntu.com/lts/serverguide/cgroups.html
 #
 class cgroups (
   $config_ensure  = 'present',
