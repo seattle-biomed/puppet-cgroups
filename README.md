@@ -28,7 +28,7 @@ Basic Installation
 
 ````
 include '::cgroups'
-l````
+````
 
 Parameterized Installation
 ````
