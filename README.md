@@ -26,10 +26,12 @@ This is the cgroups module.
 
 Basic Installation
 
-  include '::cgroups'
+````
+include '::cgroups'
+l````
 
 Parameterized Installation
-
+````
   $config_options = {
     option => value
   }
@@ -41,9 +43,10 @@ Parameterized Installation
     service_ensure => 'running',
     service_enable => 'true',
   }
+````
 
 Installation with Hiera
-
+````
   ---
   class:  - cgroups
   cgroups::config::ensure:  'present'
@@ -57,9 +60,10 @@ Installation with Hiera
   cgroups::config::options:
     'group lab2':
         'cpu':
-            'cpu.rt_period_us': "1000000"
+            'cpu.rt_period_us':  "1000000"
             'cpu.rt_runtime_us': "0"
-            'cpu.shares': "3"
+            'cpu.shares':        "3"
+````
 
 # License
 
