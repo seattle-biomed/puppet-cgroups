@@ -3,10 +3,10 @@
 # Full description of class cgroups is in the README.
 #
 class cgroups::config (
-  $ensure   = $cgroups::config_ensure,
-  $options  = $cgroups::config_options,
-  $rules    = $cgroups::rules_options,
-  $location = $cgroups::mount_location
+  $ensure   = hiera('cgroups::config::ensure', $cgroups::config_ensure),
+  $options  = hiera('cgroups::config::options', $cgroups::config_options),
+  $rules    = hiera('cgroups::config::rules', $cgroups::rules_options),
+  $location = hiera('cgroups::config::location', $cgroups::mount_location),
 ) {
   include cgroups::params
   validate_hash($options)

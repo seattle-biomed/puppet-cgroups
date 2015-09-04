@@ -6,8 +6,8 @@
 # Full description of class cgroups is in the README.
 #
 class cgroups::service (
-  $enable   = $cgroups::service_enable,
-  $ensure   = $cgroups::service_ensure,
+  $enable   = hiera('cgroups::service::enable', $cgroups::service_enable),
+  $ensure   = hiera('cgroups::service::ensure', $cgroups::service_ensure),
 ) {
 
   # Ubuntu precise has an upstart job for reconfiguring cgroups, trusty doesn't.
