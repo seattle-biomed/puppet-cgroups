@@ -12,15 +12,15 @@ mount {
 <%= k %> {
 <%   v.sort.map do |ki, vi| -%>
 <%     if vi.is_a?(Hash) -%>
-<%=     ki %> {
+  <%=    ki %> {
 <%       vi.sort.map do |kx, vx| -%>
 <%         if vx != :undef -%>
-<%=          kx %> = "<%= vx %>";
+    <%=      kx %> = "<%= vx %>";
 <%         end -%>
 <%       end -%>
-}
+  }
 <%     end -%>
-<%     if vi != :undef -%>
+<%     elsif vi != :undef -%>
 <%=      ki %> = "<%= vi %>";
 <%     end -%>
 <%   end -%>
