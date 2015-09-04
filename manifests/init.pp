@@ -5,7 +5,7 @@
 #
 class cgroups (
   $config_ensure  = 'present',
-  $config_options = [],
+  $config_options = {},
   $mount_location = '/sys/fs/cgroup',
   $package_ensure = 'installed',
   $rules_options  = [],
